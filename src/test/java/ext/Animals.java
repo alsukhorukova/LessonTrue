@@ -11,6 +11,9 @@ public class Animals {
     public void eat(){
         System.out.println("omnonnonmon");
     }
+    public void sleep(){
+        System.out.println("ZZzzzzzz");
+    }
 
     public String getName() {
         return name;
