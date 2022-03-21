@@ -26,7 +26,7 @@ public class HelpedMethods {
         return "lost";
     }
 
-    static int sum (int a, int b){
+    public static int sum (int a, int b){
         return a+b;
     }
 

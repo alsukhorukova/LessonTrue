@@ -41,8 +41,6 @@ public class Programm {
             System.out.println("Зеленый");
         }
 
-        char symbol = '*';
-
         int num = 3;
         System.out.println("Hello world!");
         System.out.println(HelpedMethods.parametr);
