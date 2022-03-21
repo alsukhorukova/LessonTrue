@@ -15,9 +15,7 @@ public class Server {
 
     public static void main(String[] args) {
 
-    //    int portNum = 4446;
-
-        int portNum = Integer.parseInt(System.getProperty("ServerPort"));
+        int portNum = 4446;
 
         HttpServer server = null;
 
@@ -110,7 +108,7 @@ public class Server {
 
             for (String a : headers) {
                 if (a.contains("Hello")) {
-                    builder.append("Hello to my Friend");
+                    builder.append("Hello to, my Friend");
                     builder.append("\n");
                 }
             }
@@ -140,12 +138,16 @@ public class Server {
 
 
             if (headers.contains("[none]")) {
-                builder.append("There is a sum of two numbers:");
+                builder.append("Prostaya arifmetika:");
                 builder.append("\n");
             }
 
             int num = 3;
-            builder.append(num + " and " + num + " = " + HelpedMethods.sum(num, num));
+            int x = 123456;
+            int y = 29991;
+            builder.append("Sum " + num + " and " + num + " = " + HelpedMethods.sum(num, num));
+            builder.append("\n");
+            builder.append(x + " minus " + y + " = " + HelpedMethods.dif(x, y));
             byte[] bytes = builder.toString().getBytes();
             exchange.sendResponseHeaders(200, bytes.length);
 
