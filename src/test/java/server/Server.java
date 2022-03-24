@@ -15,7 +15,9 @@ public class Server {
 
     public static void main(String[] args) {
 
-        int portNum = 4446;
+    //    int portNum = 4446;
+
+        int portNum = Integer.parseInt(System.getProperty("ServerPort"));
 
         HttpServer server = null;
 

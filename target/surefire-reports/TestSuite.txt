@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.685 s <<< FAILURE! - in TestSuite
+startTest(firstTests.FirstTest)  Time elapsed: 0.016 s  <<< FAILURE!
+java.lang.AssertionError: Проверяем, что текст содержит expected [true] but found [false]
+	at firstTests.FirstTest.startTest(FirstTest.java:43)
+
