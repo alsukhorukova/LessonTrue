@@ -1,3 +1,6 @@
+//*
+//T
+//
 package testsDZ4;
 
 public class Numbers {
