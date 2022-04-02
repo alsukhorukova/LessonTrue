@@ -8,6 +8,10 @@ public class Programm {
 
     public static void main(String[] args) {
 
+        /**
+         * ДЗ 1
+         */
+
         short testShort = 3333;
         System.out.println("Разность " + testShort + " и " + testShort + " = " + HelpedMethods.dif(testShort, testShort));
 
@@ -40,6 +44,10 @@ public class Programm {
         } else {
             System.out.println("Зеленый");
         }
+
+        /**
+         * Лекция 1
+         */
 
         int num = 3;
         System.out.println("Hello world!");

@@ -18,6 +18,11 @@ public class MyFarm {
         System.out.println(buch.getName());
         buch.getColor();
 
+
+        /**
+         * ДЗ 2
+         */
+
         babe.eat();
         babe.sleep();
         babe.say();

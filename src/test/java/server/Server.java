@@ -32,6 +32,10 @@ public class Server {
 
         HttpContext context2 = server.createContext("/help", new Server.EchoHandler2());
 
+        /**
+         * ДЗ 3
+         */
+
         HttpContext context3 = server.createContext("/interesting", new Server.EchoHandler3());
 
         HttpContext context4 = server.createContext("/count", new Server.EchoHandler4());
@@ -96,6 +100,10 @@ public class Server {
         }
 
     }
+
+    /**
+     * ДЗ 3
+     */
 
     static class EchoHandler3 implements HttpHandler {
 

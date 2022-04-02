@@ -1,3 +1,7 @@
+/**
+ * ДЗ 2
+ */
+
 package ext;
 
 public class Pig extends Animals implements AnimalColor{
