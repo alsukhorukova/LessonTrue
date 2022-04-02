@@ -10,9 +10,6 @@ public class InitPageObject extends Base {
         super(driver);
     }
 
-    /*.//tr [contains(.,'ВАКАНСИИ')]
-
-     */
     @FindBy(xpath = ".//input [@placeholder='Поиск']")
     private WebElement searchText;
 
