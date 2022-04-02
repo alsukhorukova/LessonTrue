@@ -18,16 +18,4 @@
         </classes>
     </test>
 
-    <test name = "summa">
-        <classes>
-            <class name="testsDZ4.NumbersTest"></class>
-        </classes>
-    </test>
-
-    <test name = "TestFile">
-        <classes>
-            <class name="testsDZ4.FileTest"></class>
-        </classes>
-    </test>
-
 </suite>

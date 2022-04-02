@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suit2" verbose="1">
+
+    <test name = "summa">
+        <classes>
+            <class name="testsDZ4.NumbersTest"></class>
+        </classes>
+    </test>
+
+    <test name = "TestFile">
+        <classes>
+            <class name="testsDZ4.FileTest"></class>
+        </classes>
+    </test>
+
+</suite>
