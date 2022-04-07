@@ -29,8 +29,7 @@ public class HelpedMethods {
     public static int sum(int a, int b) {
         return a + b;
     }
-
-    static short dif(short x, short y) {
+    public static short dif(short x, short y) {
         return (short) (x - y);
     }
 

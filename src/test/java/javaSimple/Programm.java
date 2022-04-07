@@ -8,47 +8,6 @@ public class Programm {
 
     public static void main(String[] args) {
 
-        /**
-         * ДЗ 1
-         */
-
-        short testShort = 3333;
-        System.out.println("Разность " + testShort + " и " + testShort + " = " + HelpedMethods.dif(testShort, testShort));
-
-        testShort = 1212;
-        if (testShort == 1211) {
-            System.out.println("Введите 1212");
-        } else if (testShort == 1212) {
-            System.out.println("Все правильно!");
-
-        }
-
-        long testLong = -327462351;
-        if (testLong < -312312122) {
-            System.out.println("Введите число больше");
-        } else {
-            System.out.println("Все правильно!");
-        }
-
-        if (testShort > testLong) {
-            System.out.println("Почти правильно");
-        } else {
-                System.out.println("Вообще не правильно все это");
-            }
-
-
-        double testDouble = 2221231.2;
-        float testFloat = 1244.21f;
-        if (testDouble != testFloat) {
-                System.out.println("Красный");
-        } else {
-            System.out.println("Зеленый");
-        }
-
-        /**
-         * Лекция 1
-         */
-
         int num = 3;
         System.out.println("Hello world!");
         System.out.println(HelpedMethods.parametr);

@@ -41,7 +41,7 @@ public class Collections {
 
         list.forEach(s -> System.out.println("strin=" + s));
         list.stream().filter(s -> s.length()<14).forEach(s -> System.out.println("Фильтр="+s));
-        list.stream().filter(s -> s.contains("a")).forEach(s -> System.out.println("Фильтр2="+s));
+          list.stream().filter(s -> s.contains("a")).forEach(s -> System.out.println("Фильтр2="+s));
         
     }
 }
