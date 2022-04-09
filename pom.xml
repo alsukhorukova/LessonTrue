@@ -16,13 +16,17 @@
 
         <server.port>4448</server.port>
 
+        <browser.name>chrome</browser.name>
+
         <fork.Count>1</fork.Count>
 
-        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>
-
-        <suiteXmlFile>src\test\dz4.xml</suiteXmlFile>
+<!--        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>-->
+<!--        <suiteXmlFile>src\test\dz4.xml</suiteXmlFile>-->
+        <suiteXmlFile>src\test\seltest.xml</suiteXmlFile>
 
         <someModule.includes>firstTests.FirstTest</someModule.includes>
+
+        <stend.key>stend1</stend.key>
 
     </properties>
 
@@ -54,7 +58,22 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.1.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
         </dependency>
 
     </dependencies>
@@ -69,8 +88,8 @@
 
                 <configuration>
 
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                   <suiteXmlFiles>
+                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <includes>
@@ -85,7 +104,6 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjs.version}/aspectjweaver-${aspectjs.version}.jar"
                     </argLine>
 
-
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -96,8 +114,19 @@
                             <name>ServerPort</name>
                             <value>${server.port}</value>
                         </property>
-                    </systemProperties>
 
+                        <property>
+                            <name>BrowserName</name>
+                            <value>${server.port)</value>
+                        </property>
+
+
+                        <property>
+                            <name>StendKey</name>
+                            <value>${stend.key}</value>
+                        </property>
+
+                    </systemProperties>
 
                 </configuration>
 
