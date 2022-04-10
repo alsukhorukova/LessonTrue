@@ -14,7 +14,7 @@ public class Base {
 
     public Base(final WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver=driver;
+        this.driver = driver;
 
     }
 
@@ -22,7 +22,7 @@ public class Base {
         return driver;
     }
 
-    public void click(final WebElement element){
+    public void click(final WebElement element) {
         waitVisibilityElement(element);
         element.click();
     }
@@ -64,4 +64,5 @@ public class Base {
 
         return false;
     }
+
 }

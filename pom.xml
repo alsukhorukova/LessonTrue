@@ -16,7 +16,7 @@
 
         <server.port>4448</server.port>
 
-        <browser.name>chrome</browser.name>
+        <browser.name>firefox</browser.name>
 
         <fork.Count>1</fork.Count>
 
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.2</version>
+            <version>3.141.59</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -88,9 +88,9 @@
 
                 <configuration>
 
-                   <suiteXmlFiles>
-                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                   <suiteXmlFiles>-->
+<!--                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
 
                     <includes>
                         <include>$(someModule.includes)</include>
