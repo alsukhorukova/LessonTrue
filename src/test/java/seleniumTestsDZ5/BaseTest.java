@@ -1,5 +1,6 @@
 package seleniumTestsDZ5;
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pageObject.Common;
+import testData.WordsTestData;
 import utils.PropertyLoader;
 
 import java.net.MalformedURLException;
@@ -19,6 +22,8 @@ import java.sql.Driver;
 
 public class BaseTest {
     WebDriver driver;
+
+    protected Common c = new Common();
 
     public static String setStendKey = System.setProperty("StendKey", "stend1");
     public static String stendKey = System.getProperty("StendKey");
@@ -34,16 +39,16 @@ public class BaseTest {
 
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
         FirefoxOptions op = new FirefoxOptions();
-        DesiredCapabilities dc = DesiredCapabilities.firefox();
-        dc.setCapability(FirefoxOptions.FIREFOX_OPTIONS, op);
-        driver = new FirefoxDriver();
+//        DesiredCapabilities dc = DesiredCapabilities.firefox();
+//        dc.setCapability(FirefoxOptions.FIREFOX_OPTIONS, op);
+//        driver = new FirefoxDriver();
 
         //op.setCapability("version","selenoid_buharova");
 
         URL hub = null;
 
         try {
-           hub = new URL("http://localhost:4445/wd/hub");
+           hub = new URL("http://localhost:4444/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -64,6 +69,7 @@ public class BaseTest {
         return driver;
     }
 
+    @Attachment(value = "PageScreenshot", type = "image/png")
     public byte[] getScreenShot(){
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }

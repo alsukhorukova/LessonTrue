@@ -9,6 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
@@ -20,8 +23,8 @@
 
         <fork.Count>1</fork.Count>
 
-<!--        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>-->
-<!--        <suiteXmlFile>src\test\dz4.xml</suiteXmlFile>-->
+        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>
+        <suiteXmlFile>src\test\dz4.xml</suiteXmlFile>
         <suiteXmlFile>src\test\seltest.xml</suiteXmlFile>
 
         <someModule.includes>firstTests.FirstTest</someModule.includes>
@@ -76,6 +79,21 @@
             <version>2.6</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.13.9</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -88,9 +106,9 @@
 
                 <configuration>
 
-<!--                   <suiteXmlFiles>-->
-<!--                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
-<!--                    </suiteXmlFiles>-->
+                   <suiteXmlFiles>
+                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
 
                     <includes>
                         <include>$(someModule.includes)</include>

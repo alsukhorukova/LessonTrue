@@ -1,5 +1,9 @@
 package seleniumTestsDZ5;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -26,7 +30,12 @@ public class SelParamTest extends BaseTest {
     }
 
     @Test(dataProvider = "setWords")
+    @Epic("Селениум")
+    @Feature("Ламода тесты с параметрами")
+    @Description("Слова")
+    @Story("Проверяем поиск")
     public void startTest (String word, String testName){
+        c.logToReport("ссылка на стенд:" + stendUrl);
         getDriver().get(stendUrl);
         getDriver().manage().window().maximize();
 
@@ -37,12 +46,12 @@ public class SelParamTest extends BaseTest {
         Assertion as = new Assertion();
         as.assertTrue(sr.isElementExist());
 
-        File file = new File("./src/main/resources/" + testName + ".jpg");
-            try {
-                FileUtils.writeByteArrayToFile(file, getScreenShot());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//        File file = new File("./src/main/resources/" + testName + ".jpg");
+//            try {
+//                FileUtils.writeByteArrayToFile(file, getScreenShot());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
 
     }

@@ -1,5 +1,6 @@
 package pageObject.lamoda;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class SearchResultPageObject extends Base {
      * Проверяем, что есть ссылка на товары для дома.
      * @return
      */
+    @Step ("Проверяем, что есть ссылка на товары для дома.")
     public boolean isElementExist(){
         return waitVisibilityElement(homeStaff);
     }
