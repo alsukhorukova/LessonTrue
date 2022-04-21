@@ -16,15 +16,11 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <aspectjs.version>1.9.8</aspectjs.version>
-
-        <server.port>4448</server.port>
-
+        <server.port>4445</server.port>
+        <fork.Count>1</fork.Count>
+        <browser.name>chrome</browser.name>
         <browser.name>firefox</browser.name>
 
-        <fork.Count>1</fork.Count>
-
-        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>
-        <suiteXmlFile>src\test\dz4.xml</suiteXmlFile>
         <suiteXmlFile>src\test\seltest.xml</suiteXmlFile>
 
         <someModule.includes>firstTests.FirstTest</someModule.includes>
@@ -34,6 +30,7 @@
     </properties>
 
     <dependencies>
+
         <!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
         <dependency>
             <groupId>com.mashape.unirest</groupId>
@@ -45,7 +42,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.4.0</version>
+            <version>7.5</version>
             <scope>test</scope>
         </dependency>
 
@@ -54,14 +51,13 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectjs.version}</version>
-            <scope>runtime</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.1.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -93,8 +89,9 @@
             <version>8.0.28</version>
         </dependency>
 
-
     </dependencies>
+
+
 
     <build>
         <plugins>
@@ -103,16 +100,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-
                 <configuration>
 
-                   <suiteXmlFiles>
-                    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
 
-                    <includes>
-                        <include>$(someModule.includes)</include>
-                    </includes>
 
                     <forkCount>${fork.Count}</forkCount>
                     <reuseForks>true</reuseForks>
@@ -133,37 +126,23 @@
                             <value>${server.port}</value>
                         </property>
 
-                        <property>
-                            <name>BrowserName</name>
-                            <value>${server.port)</value>
-                        </property>
-
-
-                        <property>
-                            <name>StendKey</name>
-                            <value>${stend.key}</value>
-                        </property>
-
                     </systemProperties>
 
                 </configuration>
 
-            </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
-            </plugin>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectjs.version}</version>
+                    </dependency>
+                </dependencies>
 
+            </plugin>
 
         </plugins>
 
-
     </build>
-
 
 </project>
