@@ -1,7 +1,6 @@
 package javaSimple;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class DZ2 {
 
@@ -25,6 +24,54 @@ public class DZ2 {
 
         for (int i=0;i< list.size();i++){
             System.out.println(list.get(i));
+        }
+
+        //Set
+
+        Set<String> set1 = new HashSet<String>();
+        set1.add("строка 1");
+        set1.add("строка 2");
+        set1.add("строка 3");
+        set1.add("строка 4");
+        set1.remove("строка 4");
+        for (String s : set1){
+            System.out.println(s);
+        }
+
+        Set<String> set2 = new HashSet<String>();
+        set2.add("element 1");
+        set2.add("element 2");
+        set2.add("element 3");
+        set2.add("element 3");
+        Iterator<String> iterator = set2.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        if (set2.contains("element 1"))
+            System.out.println("Элемент найден");
+
+        //Map
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("element1", 1);
+        map.put("element2", 5);
+        map.put("element3", 6);
+        map.put("element4", 10);
+
+        Integer num = map.get("element2");
+        System.out.println(num);
+
+        map.remove("element4");
+        System.out.println(map.containsKey("element4"));
+        System.out.println(map.containsValue(6));
+
+        Set<String> elements = map.keySet();
+        for(String k : elements){
+            System.out.println(k);
+        }
+
+        for(int n : map.values()){
+            System.out.println(n);
         }
 
     }
