@@ -29,48 +29,35 @@ public class BaseTest {
     public static String stendKey = System.getProperty("StendKey");
     public static String stendUrl = PropertyLoader.loadProperty(stendKey);
 
-    @BeforeTest
+ @BeforeTest
     public void beforeT() {
-        //System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
-        //ChromeOptions op = new ChromeOptions();
-        //DesiredCapabilities dc = DesiredCapabilities.chrome();
-        //dc.setCapability(ChromeOptions.CAPABILITY, op);
-        //driver = new ChromeDriver();
+         System.setProperty("webdriver.gecko.driver", "./src/main/resources/geckodriver.exe");
+         FirefoxOptions of = new FirefoxOptions();
 
-        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-        FirefoxOptions op = new FirefoxOptions();
-//        DesiredCapabilities dc = DesiredCapabilities.firefox();
-//        dc.setCapability(FirefoxOptions.FIREFOX_OPTIONS, op);
-//        driver = new FirefoxDriver();
 
-        //op.setCapability("version","selenoid_buharova");
+         URL hub = null;
+         try {
+             hub = new URL("http://localhost:4445/wd/hub");
+         }catch (MalformedURLException e){
+             e.printStackTrace();
+         }
 
-        URL hub = null;
+         driver = new RemoteWebDriver(hub, of);
 
-        try {
-           hub = new URL("http://localhost:4444/wd/hub");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+     }
 
-        driver = new RemoteWebDriver(hub, op);
+     @AfterTest
+     public void afterTest(){
+         driver.quit();
+         if (driver != null);
+         driver.quit();
+     }
 
-    }
+     public WebDriver getDriver(){
+         return driver;
+     }
 
-    @AfterTest
-    public void afterTest(){
-        driver.quit();
-        if (driver!=null) {
-            driver.quit();
-        }
-    }
-
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    @Attachment(value = "PageScreenshot", type = "image/png")
-    public byte[] getScreenShot(){
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
-}
+     public byte[] getScreenShot() {
+         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+     }
+ }

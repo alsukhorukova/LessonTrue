@@ -35,7 +35,6 @@ public class SelParamTest extends BaseTest {
     @Description("Слова")
     @Story("Проверяем поиск")
     public void startTest (String word, String testName){
-        c.logToReport("ссылка на стенд:" + stendUrl);
         getDriver().get(stendUrl);
         getDriver().manage().window().maximize();
 
