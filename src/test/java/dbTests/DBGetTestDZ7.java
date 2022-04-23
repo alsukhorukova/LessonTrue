@@ -25,20 +25,29 @@ package dbTests;
 
 import db.DBHelper;
 import org.testng.annotations.Test;
-
-import java.util.Scanner;
+import org.testng.asserts.Assertion;
 
 public class DBGetTestDZ7 {
 
-    @Test
-    public static void startTest() {
-        String sql = "SELECT id FROM REGISTRATION ORDER BY id DESC LIMIT 1";
-        DBHelper.getSqlResult(sql).forEach(s->System.out.println(s));
+        @Test
+        public void startTest() {
 
-        String sql2 = "INSERT INTO REGISTRATION(id, last, first, age) SELECT coalesce (MAX(id),0) + 1, 'lastname6', 'name6', 45 FROM REGISTRATION";
-        System.out.println("Добавлено строк: " + DBHelper.getInsert(sql2));
-        DBHelper.getSqlResult(sql).forEach(s->System.out.println(s));
+            String sql = "SELECT * FROM REGISTRATION ORDER BY id DESC";
+
+            int i = Integer.parseInt(DBHelper.getValueFirstRow(sql, "id")) + 1;
+
+            String sql2 = "INSERT INTO REGISTRATION (id, last, first, age) VALUES ('"+i+"', 'newlastname', 'newfirstname', 123)";
+
+            int id1 = DBHelper.countSqlResult(sql);
+            DBHelper.getInsert(sql2);
+            int id2 = DBHelper.countSqlResult(sql);
+            DBHelper.getSqlResult(sql).forEach(s -> System.out.println(s));
+
+            Assertion as = new Assertion();
+            as.assertEquals(Integer.parseInt(DBHelper.getValueFirstRow(sql, "id")), i);
+            as.assertTrue(id2 > id1);
+            System.out.println("Добавлена строка c id = " + DBHelper.getValueFirstRow(sql, "id"));
+
+        }
 
     }
-
-}

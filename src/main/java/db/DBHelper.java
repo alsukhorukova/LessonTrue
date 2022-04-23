@@ -77,10 +77,28 @@ public class DBHelper {
         }
         return sqlResult;
     }
-    public static String getValueLastRow(String sql, String colName) {
+    public static String getValueFirstRow(String sql, String colName) {
         String value = getSqlResult(sql).get(0).get(colName).toString();
 
         return value;
+    }
+
+    public static int countSqlResult(final String sql) {
+
+        int count = 0;
+        ResultSet rs = null;
+        init();
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            while (rs.next()){
+                count++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+
     }
 
     public static int getInsert(String sql) {
